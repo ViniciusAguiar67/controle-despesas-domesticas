@@ -1,5 +1,14 @@
-import express from 'express';
+import { Router } from 'express';
+import { ExpenseController } from '../controllers/ExpenseController';
 
-const app = express();
+const expenseController = new ExpenseController();
 
-export default app;
+const router = Router();
+
+router.get('/', expenseController.getAllExpenses);
+router.get('/:id', expenseController.getExpenseById);
+router.post('/', expenseController.createExpense);
+router.put('/:id', expenseController.updateExpense);
+router.delete('/:id', expenseController.deleteExpense);
+
+export default router;
