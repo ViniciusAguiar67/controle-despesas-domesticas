@@ -6,4 +6,5 @@ export interface Location {
     address: string;
     number: string;
     complement: string;
+    zipCode: string;
 }
