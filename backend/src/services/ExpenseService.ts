@@ -4,7 +4,7 @@ import { PaymentTypeService } from './PaymentTypeService';
 import { CategoryService } from './CategoryService';
 
 class ExpenseService {
-    async getAllExpenses() {
+    async getAllExpenses(page: number, pageSize: number) {
         const expenses = await new ExpenseRepository().getAllExpenses();
 
         const location = new LocationService();
@@ -29,7 +29,22 @@ class ExpenseService {
             });
         }
 
-        return list;
+        const total = list.length;
+        const pageInt = page;
+        const pageSizeInt = pageSize;
+        const pageCount = Math.ceil(total / pageSizeInt);
+        const startIndex = (pageInt - 1) * pageSizeInt;
+        const paginatedData = list.slice(startIndex, startIndex + pageSizeInt);
+
+        return {
+            expenses: paginatedData,
+            pagination: {
+                page: pageInt,
+                pageSize: pageSizeInt,
+                pageCount,
+                total
+            }
+        };
     }
 
     async getExpenseById(id: number) {

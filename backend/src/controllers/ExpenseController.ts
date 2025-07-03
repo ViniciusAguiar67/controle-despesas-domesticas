@@ -6,7 +6,9 @@ const expenseService = new ExpenseService();
 class ExpenseController {
     async getAllExpenses(req: Request, res: Response) {
         try {
-            const expenses = await expenseService.getAllExpenses();
+            const page = parseInt(req.query.page as string) || 1;
+            const pageSize = parseInt(req.query.pageSize as string) || 10;
+            const expenses = await expenseService.getAllExpenses(page, pageSize);
             res.status(200).json({ data: expenses, success: true });
         } catch (error: any) {
             res.status(500).json({ error: error.message, success: false });
