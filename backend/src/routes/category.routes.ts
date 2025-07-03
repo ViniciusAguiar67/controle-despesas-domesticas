@@ -5,6 +5,6 @@ const categoryController = new CategoryController();
 
 const router = Router();
 
-router.get('/', categoryController.getAllPaymentTypes);
+router.get('/', categoryController.getAllCategories);
 
 export default router;

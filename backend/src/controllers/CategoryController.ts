@@ -4,7 +4,7 @@ import { CategoryService } from "../services/CategoryService";
 const categoryService = new CategoryService();
 
 class CategoryController {
-    async getAllPaymentTypes(req: Request, res: Response) {
+    async getAllCategories(req: Request, res: Response) {
         try {
             const categories = await categoryService.getAllCategories();
             res.status(200).json({ data: categories, success: true });

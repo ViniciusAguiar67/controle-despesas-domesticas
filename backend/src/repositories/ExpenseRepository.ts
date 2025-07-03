@@ -13,6 +13,8 @@ class ExpenseRepository {
         id_local AS locationId,
         id_tipo_pagamento AS paymentTypeId
       FROM despesas
+      WHERE YEAR(data_compra) = YEAR(CURRENT_DATE())
+        AND MONTH(data_compra) = MONTH(CURRENT_DATE())
       ORDER BY data_compra DESC
     `);
     return rows as Expense[];
