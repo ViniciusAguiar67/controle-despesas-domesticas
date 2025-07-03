@@ -4,7 +4,19 @@ import { Location } from '../models/Location';
 class LocationRepository {
   async getLocationById(id: number) {
     const [rows] = await pool.query('SELECT * FROM enderecos WHERE id = ?', [id]);
-    return (rows as Location[])[0] || null;
+    const row = (rows as any[])[0];
+    if (!row) return null;
+
+    return {
+      id: row.id,
+      address: row.logradouro,
+      number: row.numero,
+      neighborhood: row.bairro,
+      city: row.municipio,
+      state: row.uf,
+      complement: row.complemento,
+      zipCode: row.cep,
+    };
   };
 
   async createLocation(location: Location) {
