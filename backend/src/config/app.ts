@@ -19,7 +19,7 @@ app.use('/api/categorias', categoryRoutes);
 app.use('/api/tipos-de-pagamento', paymentTypeRoutes);
 
 app.get('/', (req, res) => {
-  res.send('API Orçamento Doméstico funcionando!');
+  res.send('API Controle de Despesas funcionando!');
 });
 
 export default app;
