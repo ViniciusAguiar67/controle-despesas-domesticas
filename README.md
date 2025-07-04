@@ -20,17 +20,16 @@ cd backend
 
 2. Instale as dependências:
 
-# Com yarn
+Com yarn
 yarn
-
-# Ou com npm
+ 
+Ou com npm
 npm install
 
 3. Crie um arquivo .env na raiz da pasta backend com o seguinte conteúdo:
 
 PORT=3000
 
-# DATABASE
 DATABASE_HOST=localhost
 DATABASE_PORT=3306
 DATABASE_NAME=controle_despesas
@@ -41,13 +40,13 @@ Certifique-se de que o banco de dados esteja rodando e com as credenciais acima 
 
 Inicie o servidor:
 
-# Com yarn
+Com yarn
 yarn dev
 
-# Ou com npm
+Ou com npm
 npm run dev
 
-🌐 Frontend
+# 🌐 Frontend
 
 1. Acesse a pasta do front-end:
 
@@ -55,29 +54,29 @@ cd frontend
 
 2. Instale as dependências:
 
-# Com yarn
+Com yarn
 yarn
 
-# Ou com npm
+Ou com npm
 npm install
 
 3. Gere a build necessária do Next.js:
 
-# Com yarn
+Com yarn
 yarn build
 
-# Ou com npm
+Ou com npm
 npm run build
 
 4. Inicie o servidor de desenvolvimento:
 
-# Com yarn
+Com yarn
 yarn dev
 
-# Ou com npm
+Ou com npm
 npm run dev
 
-📝 Observações
+# 📝 Observações
 
 O back-end expõe uma API RESTful com endpoints para controle de despesas.
 
