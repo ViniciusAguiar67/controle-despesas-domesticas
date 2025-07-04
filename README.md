@@ -90,21 +90,7 @@ yarn
 npm install
 ```
 
-3. **Gere a build necessária do Next.js:**
-
-- **Com yarn:**
-
-```bash
-yarn build
-```
-
-- **Ou com npm:**
-
-```bash
-npm run build
-```
-
-4. **Inicie o servidor de desenvolvimento:**
+3. **Inicie o servidor de desenvolvimento:**
 
 - **Com yarn:**
 
