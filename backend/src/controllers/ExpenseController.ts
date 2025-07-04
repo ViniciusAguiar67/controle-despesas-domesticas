@@ -28,7 +28,7 @@ class ExpenseController {
     async createExpense(req: Request, res: Response) {
         try {
             const expense = await expenseService.createExpense(req.body);
-            res.status(200).json({ data: expense, success: true });
+            res.status(201).json({ data: expense, success: true });
         } catch (error: any) {
             res.status(500).json({ error: error.message, success: false });
         }
@@ -48,7 +48,7 @@ class ExpenseController {
         try {
             const id = Number(req.params.id);
             const expense = await expenseService.deleteExpense(id);
-            res.status(200).json({ data: expense, success: true });
+            res.status(204).json({ data: expense, success: true });
         } catch (error: any) {
             res.status(500).json({ error: error.message, success: false });
         }
