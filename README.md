@@ -21,8 +21,7 @@ cd backend
 
 2. Instale as dependências:
 
-```Com yarn```
-yarn
+```yarn```
 
 ```Com npm```
 npm install
