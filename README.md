@@ -16,6 +16,7 @@ Next.js v15.3.4
 
 1. Acesse a pasta do back-end:
 
+```bash```
 cd backend
 
 2. Instale as dependências:
