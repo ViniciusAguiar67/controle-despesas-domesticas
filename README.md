@@ -39,6 +39,7 @@ npm install
 ```
 PORT=3000
 
+#DATABASE
 DATABASE_HOST=localhost
 DATABASE_PORT=3306
 DATABASE_NAME=controle_despesas
