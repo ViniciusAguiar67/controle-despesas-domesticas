@@ -16,14 +16,23 @@ Sistema completo para controle de despesas e orçamento doméstico, com API REST
 
 1. **Acesse a pasta do back-end:**
 
-```bash```
+```bash
 cd backend
+```
 
 2. **Instale as dependências:**
 
-- yarn
+- **Com yarn:**
 
-- npm install
+```bash
+yarn
+```
+
+- **Ou com npm:**
+
+```bash
+npm install
+```
 
 3. **Crie um arquivo .env na raiz da pasta backend com o seguinte conteúdo:**
 
@@ -33,34 +42,69 @@ cd backend
 
 4. **Inicie o servidor:**
 
-- yarn dev
+- **Com yarn:**
 
-- npm run dev
+```bash
+yarn dev
+```
+
+- **Ou com npm:**
+
+```bash
+npm run dev
+```
+
 
 #### 🌐 Frontend
 
 1. **Acesse a pasta do front-end:**
 
-```bash```
+```bash
 cd frontend
+```
 
 2. **Instale as dependências:**
 
-- yarn
+- **Com yarn:**
 
-- npm install
+```bash
+yarn
+```
+
+- **Ou com npm:**
+
+```bash
+npm install
+```
 
 3. **Gere a build necessária do Next.js:**
 
-- yarn build
+- **Com yarn:**
 
-- npm run build
+```bash
+yarn build
+```
+
+- **Ou com npm:**
+
+```bash
+npm run build
+```
 
 4. **Inicie o servidor de desenvolvimento:**
 
-- yarn dev
+- **Com yarn:**
 
-- npm run dev
+```bash
+yarn dev
+```
+
+- **Ou com npm:**
+
+```bash
+npm run dev
+```
+
 
 # 📝 Observações
 
