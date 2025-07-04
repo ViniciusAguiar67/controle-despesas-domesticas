@@ -47,7 +47,11 @@ DATABASE_USERNAME=root
 DATABASE_PASSWORD=
 ```
 
-💡 Certifique-se de que o banco de dados esteja rodando e com as credenciais acima ou altere conforme necessário.
+💡 Certifique-se de que o banco de dados esteja em execução. Antes de iniciar a aplicação, crie o banco de dados utilizando o script SQL disponível em:
+
+`database/controle_despesas.sql`
+
+❗Caso utilize credenciais diferentes, lembre-se de atualizá-las no arquivo .env.
 
 4. **Inicie o servidor:**
 
