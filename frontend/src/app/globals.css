@@ -19,10 +19,17 @@
     --foreground: #ededed;
     --primary-color: #00418f;
     thead tr {
-      background-color: #FFEDD5 !important; /* cor laranja clara */
+      background-color: #FFEDD5 !important; 
     }
     thead th {
-      color: var(--background) !important; /* texto claro */
+      color: var(--background) !important; 
+    }
+    input[type="date"]::-webkit-calendar-picker-indicator {
+      filter: brightness(0) invert(1);
+    }
+    select option {
+      color: var(--background); 
+      background-color: var(--foreground); 
     }
   }
 }
