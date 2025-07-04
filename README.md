@@ -36,7 +36,15 @@ npm install
 
 3. **Crie um arquivo .env na raiz da pasta backend com o seguinte conteúdo:**
 
-<pre> ```env PORT=3000 DATABASE_HOST=localhost DATABASE_PORT=3306 DATABASE_NAME=controle_despesas DATABASE_USERNAME=root DATABASE_PASSWORD= ``` </pre>
+```env
+PORT=3000
+
+DATABASE_HOST=localhost
+DATABASE_PORT=3306
+DATABASE_NAME=controle_despesas
+DATABASE_USERNAME=root
+DATABASE_PASSWORD=
+```
 
 💡 Certifique-se de que o banco de dados esteja rodando e com as credenciais acima ou altere conforme necessário.
 
