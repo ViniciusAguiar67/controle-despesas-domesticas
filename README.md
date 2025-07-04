@@ -14,7 +14,7 @@ Sistema completo para controle de despesas e orçamento doméstico, com API REST
 
 ### 🔧 Backend
 
-1. **Acesse a pasta do back-end:**
+1. **Abra um terminal e navegue até a pasta do back-end:**
 
 ```bash
 cd backend
@@ -70,7 +70,7 @@ npm run dev
 
 #### 🌐 Frontend
 
-1. **Acesse a pasta do front-end:**
+1. **Abra um terminal e navegue até a pasta do front-end:**
 
 ```bash
 cd frontend
