@@ -36,7 +36,7 @@ npm install
 
 3. **Crie um arquivo .env na raiz da pasta backend com o seguinte conteúdo:**
 
-```env
+```
 PORT=3000
 
 DATABASE_HOST=localhost
