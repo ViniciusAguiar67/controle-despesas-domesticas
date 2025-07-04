@@ -21,9 +21,9 @@ cd backend
 
 2. **Instale as dependências:**
 
-yarn
+- yarn
 
-npm install
+- npm install
 
 3. **Crie um arquivo .env na raiz da pasta backend com o seguinte conteúdo:**
 
@@ -33,9 +33,9 @@ npm install
 
 4. **Inicie o servidor:**
 
-yarn dev
+- yarn dev
 
-npm run dev
+- npm run dev
 
 #### 🌐 Frontend
 
@@ -46,21 +46,21 @@ cd frontend
 
 2. **Instale as dependências:**
 
-yarn
+- yarn
 
-npm install
+- npm install
 
 3. **Gere a build necessária do Next.js:**
 
-yarn build
+- yarn build
 
-npm run build
+- npm run build
 
 4. **Inicie o servidor de desenvolvimento:**
 
-yarn dev
+- yarn dev
 
-npm run dev
+- npm run dev
 
 # 📝 Observações
 
