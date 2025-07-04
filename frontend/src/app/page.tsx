@@ -16,7 +16,7 @@ export default function Home() {
         className="font-semibold px-5 py-2 rounded"
         style={{
           backgroundColor: 'var(--primary-color)',
-          color: 'var(--foreground)',
+          color: 'white',
         }}
       >
         Acessar Despesas
