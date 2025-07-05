@@ -82,7 +82,19 @@ class ExpenseService {
     async createExpense(data: any) {
         const { location, ...expenseData } = data;
 
-        if (!expenseData.description || expenseData.value <= 0 || !expenseData.date || !expenseData.categoryId || !expenseData.paymentTypeId || !location) {
+        if (!expenseData.description || 
+            expenseData.value <= 0 || 
+            !expenseData.date || 
+            !expenseData.categoryId || 
+            !expenseData.paymentTypeId || 
+            !location ||
+            !location.state ||
+            !location.city ||
+            !location.address ||
+            !location.number ||
+            !location.neighborhood ||
+            !location.zipCode
+        ) {
             throw new Error('Campos não preenchidos');
         }
 
@@ -116,7 +128,19 @@ class ExpenseService {
             location,
         } = data;
 
-        if (!description || value <= 0 || !date || !categoryId || !paymentTypeId || !location) {
+        if (!description || 
+            value <= 0 || 
+            !date || 
+            !categoryId || 
+            !paymentTypeId || 
+            !location ||
+            !location.state ||
+            !location.city ||
+            !location.address ||
+            !location.number ||
+            !location.neighborhood ||
+            !location.zipCode
+        ) {
             throw new Error('Campos não preenchidos');
         }
 
