@@ -67,6 +67,19 @@ yarn dev
 npm run dev
 ```
 
+5. **Execute os testes unitários:**
+
+- **Com yarn:**
+
+```bash
+yarn test
+```
+
+- **Ou com npm:**
+
+```bash
+npm run test
+```
 
 #### 🌐 Frontend
 
