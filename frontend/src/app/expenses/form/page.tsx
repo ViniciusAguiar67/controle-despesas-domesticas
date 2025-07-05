@@ -57,6 +57,7 @@ export default function ExpenseForm() {
   const [paymentTypes, setPaymentTypes] = useState<{ id: number; type: string }[]>([]);
 
   const [errors, setErrors] = useState<Record<string, boolean>>({});
+  const [apiError, setApiError] = useState<string | null>(null);
 
   // Função para formatar CEP para 00000-000
   function formatCep(value: string): string {
@@ -201,12 +202,9 @@ export default function ExpenseForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!validate()) {
-      const firstErrorField = Object.keys(errors)[0];
-      const element = document.getElementsByName(firstErrorField)[0];
-      if (element) element.focus();
-      return;
-    }
+    setApiError(null);
+
+    const isValid = validate();
 
     const cleanedValue = formData.value.replace(/[^\d,.-]/g, '').replace(',', '.');
     const numericValue = parseFloat(cleanedValue);
@@ -216,12 +214,26 @@ export default function ExpenseForm() {
       value: numericValue,
     };
 
-    if (id) {
-      await updateExpense(Number(id), payload);
-    } else {
-      await createExpense(payload);
+    try {
+      if (id) {
+        await updateExpense(Number(id), payload);
+      } else {
+        await createExpense(payload);
+      }
+      router.push('/expenses');
+    } catch (error: any) {
+      if (error.response) {
+        setApiError(error.response.data.error || 'Erro ao salvar a despesa');
+
+        const firstErrorField = Object.keys(errors)[0];
+        const element = document.getElementsByName(firstErrorField)[0];
+        if (element) element.focus();
+        
+      } else {
+        setApiError('Erro inesperado ao salvar a despesa');
+        console.error(error);
+      }
     }
-    router.push('/expenses');
   };
 
   const inputClass = (fieldName: string) =>
@@ -372,6 +384,12 @@ export default function ExpenseForm() {
           disabled={fieldsBlocked.complement}
         />
       </div>
+
+      {apiError && (
+        <div className="text-red-600 mb-4" role="alert">
+          *{apiError}
+        </div>
+      )}
 
       <div className="flex items-center justify-center gap-4 mt-4">
         <button
