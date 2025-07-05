@@ -17,7 +17,7 @@ class ExpenseService {
             const loc = await location.getLocationById(e.locationId);
             const pay = await payment.getPaymentTypeById(e.paymentTypeId);
             const cat = await category.getCategoryById(e.categoryId);
-      
+
             list.push({
                 id: e.id,
                 description: e.description,
@@ -82,8 +82,8 @@ class ExpenseService {
     async createExpense(data: any) {
         const { location, ...expenseData } = data;
 
-        if (!expenseData.description || expenseData.value <= 0 || !expenseData.date || !expenseData.categoryId || !expenseData.paymentTypeId) {
-            throw new Error('Alguns dados da despesa não foram preenchidos');
+        if (!expenseData.description || expenseData.value <= 0 || !expenseData.date || !expenseData.categoryId || !expenseData.paymentTypeId || !location) {
+            throw new Error('Campos não preenchidos');
         }
 
         const categoryService = new CategoryService();
@@ -117,7 +117,7 @@ class ExpenseService {
         } = data;
 
         if (!description || value <= 0 || !date || !categoryId || !paymentTypeId || !location) {
-            throw new Error('Alguns dados da despesa não foram preenchidos');
+            throw new Error('Campos não preenchidos');
         }
 
         const categoryService = new CategoryService();
