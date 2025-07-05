@@ -228,7 +228,14 @@ export default function ExpenseForm() {
     `border rounded-md p-2 w-full ${errors[fieldName] ? 'border-red-500' : 'border-gray-300'}`;
 
   return (
-    <form onSubmit={handleSubmit} className="p-4 space-y-6">
+    <form 
+      onSubmit={handleSubmit} onKeyDown={(e) => {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+        }
+      }} 
+      className="p-4 space-y-6"
+    >
       <h1 className="text-xl font-bold text-center" style={{ color: 'var(--primary-color)' }}>
         {id ? 'EDITAR' : 'CADASTRAR'}
       </h1>
@@ -298,7 +305,16 @@ export default function ExpenseForm() {
         name="zipCode"
         value={formData.location.zipCode}
         onChange={handleChange}
-        onBlur={handleCepBlur}
+        onBlur={(e) => {
+          if (e.relatedTarget === null) return;
+          handleCepBlur();
+        }}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter') {
+            e.preventDefault();
+            handleCepBlur();
+          }
+        }}
         placeholder="CEP"
         maxLength={9}
         className={inputClass('zipCode')}
