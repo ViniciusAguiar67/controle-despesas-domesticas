@@ -3,7 +3,7 @@ Sistema completo para controle de despesas e orçamento doméstico, com API REST
 
 ## 🧰 Tecnologias Utilizadas
 
-### Backend
+## Backend
 
 - Node.js v22.17.0
 - MySQL v9.1.0
