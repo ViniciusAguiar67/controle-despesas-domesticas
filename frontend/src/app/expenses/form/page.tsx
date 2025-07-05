@@ -183,7 +183,6 @@ export default function ExpenseForm() {
     const newErrors: Record<string, boolean> = {};
 
     if (!formData.description.trim()) newErrors.description = true;
-    if (!formData.value.trim()) newErrors.value = true;
     if (!formData.date.trim()) newErrors.date = true;
     if (!formData.categoryId) newErrors.categoryId = true;
     if (!formData.paymentTypeId) newErrors.paymentTypeId = true;
@@ -193,6 +192,11 @@ export default function ExpenseForm() {
     if (!formData.location.neighborhood.trim()) newErrors.neighborhood = true;
     if (!formData.location.address.trim()) newErrors.address = true;
     if (!formData.location.number.trim()) newErrors.number = true;
+
+    const cleanedValue = parseFloat(formData.value.replace(/[^\d,.-]/g, '').replace(',', '.'));
+    if (isNaN(cleanedValue) || cleanedValue <= 0) {
+      newErrors.value = true;
+    }
 
     setErrors(newErrors);
 
